@@ -1,0 +1,110 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #1c1c1b;
+    overflow: hidden;
+}
+.tabbar
+{
+    position: relative;
+    width: 400px;
+    height: 80px;
+    background-color: #2f2f2f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+.tabbar ul
+{
+    display: flex;
+    width: 360px; 
+}
+.tabbar ul li
+{
+    list-style: none;
+    position: relative;
+    width: 90px;
+    height: 90px;
+    transition: .6s;
+}
+.tabbar ul li a
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    transition: .6s;
+}
+.tabbar ul li a .icon
+{
+    position: relative;
+    display: block;
+    font-size: 1.2em;
+    color: #4f4f4f;
+    text-align: center;
+    transition: .6s;
+    z-index: 3;
+    line-height: 90px;
+}
+.tabbar ul li.current a .icon
+{
+    color: #fff;
+}
+.indicator
+{
+    margin:15px 0 0 6px;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transition: .6s;
+    transform: translateX(0px);
+    filter: hue-rotate(0deg);
+    border: 2px solid #ff9900;
+    animation: colorchange 3s linear infinite;
+}
+
+
+.tabbar ul li:nth-child(1).current ~ .indicator
+{
+    transform: translateX(calc(72px * 0));
+}
+.tabbar ul li:nth-child(2).current ~ .indicator
+{
+    transform: translateX(calc(72px * 1));
+}
+.tabbar ul li:nth-child(3).current ~ .indicator
+{
+    transform: translateX(calc(72px * 2));
+}
+.tabbar ul li:nth-child(4).current ~ .indicator
+{
+    transform: translateX(calc(72px * 3));
+}
+.tabbar ul li:nth-child(5).current ~ .indicator
+{
+    transform: translateX(calc(72px * 4));
+}
+
+@keyframes colorchange {
+    from
+    {
+        filter: hue-rotate(0deg);
+    }
+    to
+    {
+        filter: hue-rotate(360deg);
+    }
+}
